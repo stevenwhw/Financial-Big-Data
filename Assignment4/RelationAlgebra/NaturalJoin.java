@@ -95,7 +95,10 @@ public class NaturalJoin {
 //			做笛卡尔乘积
 			for (int i = 0; i < setA.size(); i++) {
 				for (int j = 0; j < setB.size(); j++) {
-					Text t = new Text(setA.get(i).toString() + "," + setB.get(j).getValueExcept(col));
+                    String[] valA = setA.get(i).toString().split(",");
+                    String[] valB = setB.get(j).getValueExcept(col).toString().split(",");
+                    String output=valA[0]+","+valA[1]+","+valA[2]+","+valB[0]+","+valA[3]+","+valB[1];
+					Text t = new Text(output);
 					context.write(t, NullWritable.get());
 				}
 			}
