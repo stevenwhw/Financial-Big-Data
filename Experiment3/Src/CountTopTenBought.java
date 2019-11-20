@@ -78,7 +78,7 @@ public class CountTopTenBought {
         ) throws IOException, InterruptedException {
             String[] line = value.toString().split(",");
             if(line[7].equals("2")) {
-                word.set(line[0]+","+line[10]);
+                word.set(line[1]+","+line[10]);
                 context.write(word, one);
             }
         }

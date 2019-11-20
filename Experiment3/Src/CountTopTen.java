@@ -77,7 +77,7 @@ public class CountTopTen {
         public void map(Object key, Text value, Context context
         ) throws IOException, InterruptedException {
             String[] line = value.toString().split(",");
-            word.set(line[0]+","+line[10]);
+            word.set(line[1]+","+line[10]);
             context.write(word, one);
         }
     }
