@@ -86,3 +86,31 @@ predict=model.predict(test_data.map(lambda p:p.features))
 predict_all=predict.zip(test_data.map(lambda p:p.features))
 for i in range(0,10):
     print(predict_all.collect()[i])
+print('\n')
+
+from pyspark.mllib.tree import RandomForest
+model=RandomForest.trainClassifier(train_data,numClasses=2,categoricalFeaturesInfo={},numTrees=20)
+print('RandomForest')
+predictions_and_labels=getPredictionsLabels(model,train_data)
+printMetrics(predictions_and_labels)
+acc=ModelAccuracy(model,train_data)
+print("准确率accuracy="+str(acc))
+
+predict=model.predict(test_data.map(lambda p:p.features))
+predict_all=predict.zip(test_data.map(lambda p:p.features))
+for i in range(0,10):
+    print(predict_all.collect()[i])
+print('\n')
+
+from pyspark.mllib.tree import GradientBoostedTrees
+model=GradientBoostedTrees.trainClassifier(train_data,categoricalFeaturesInfo={},maxDepth=5)
+print('GradientBoostedTrees')
+predictions_and_labels=getPredictionsLabels(model,train_data)
+printMetrics(predictions_and_labels)
+acc=ModelAccuracy(model,train_data)
+print("准确率accuracy="+str(acc))
+
+predict=model.predict(test_data.map(lambda p:p.features))
+predict_all=predict.zip(test_data.map(lambda p:p.features))
+for i in range(0,10):
+    print(predict_all.collect()[i])
