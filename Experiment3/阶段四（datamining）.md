@@ -1,4 +1,6 @@
 <h1><center>阶段四（datamining）</center></h1>
+说明：代码保存在datamining文件夹中
+
 ### 1、针对预处理后的训练集和测试集，基于MapReduce或Spark MLlib编写程序预测回头客
 
 #### （1）基于Spark ML的预测（pyspark.ml）
