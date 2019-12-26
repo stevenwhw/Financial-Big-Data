@@ -1,4 +1,5 @@
 <h1><center>阶段一（mapreduce）</center></h1>
+说明：代码在Src文件夹中，结果保存在BoughtOutput和Countoutput文件夹中
 
 ### 第一阶段（mapreduce）：
 

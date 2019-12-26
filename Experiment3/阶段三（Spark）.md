@@ -1,5 +1,5 @@
 <h1><center>阶段三（Spark编程）</center></h1>
-说明：代码在SparkScala文件夹中
+说明：代码在SparkScala文件夹中，结果保存在SparkOutput中
 
 ### 基于精简数据集完成Spark作业：
 
